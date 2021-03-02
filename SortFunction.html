@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button onclick="sortWithArr()">SortWithArr</button>
+
+<script>
+function sortWithArr() {
+	let ages = [5,10,82,65,42];
+	console.log(ages);
+	let sortAges = ages.sort((a,b) => {
+		console.log(a , b , 'a , b');
+		return a - b;
+	});
+	console.log(sortAges);
+}
+</script>
+
+</body>
+</html>

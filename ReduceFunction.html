@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button onclick="reduceWithArr()">ReduceWithArr</button>
+<button onclick="reduceWith2DArr()">ReduceWith2DArr</button>
+<script>
+/*
+
+prev = 0; next = 1;
+prev = 1; next = 3;
+prev = 4; next = 5;
+
+*/
+
+function reduceWithArr() {
+  let nums = [1,3,5];
+  let newNums = nums.reduce((prev, next) => {
+	console.log(prev, next , 'prev, next');
+	return prev + next;
+  },0);
+  console.log(newNums, 'newNums');
+}
+//output 9
+
+function reduceWith2DArr() {
+  let TwoDArr = [[1,2,3], [4,5,6]];
+  
+  let NewTwoDArr = TwoDArr.reduce((prev, next) => {
+	return prev.concat(next);
+  }, []);
+  console.log(NewTwoDArr, 'NewTwoDArr');
+}
+//output [1,2,3,4,5,6];
+</script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button onclick="simpleMapWithArr()">SimpleMapWithArr</button>
+<button onclick="mapWithArrOfObjs()">MapWithArrOfObjs</button>
+<button onclick="serviceMaps()">SeviceMaps</button>
+
+<script>
+function simpleMapWithArr() {
+  let nums = [1,2,3,4,5];
+  let newNums = nums.map((num, index) => {
+	console.log(index);
+	return ++num;
+  });
+ console.log(nums);
+ console.log(newNums);
+}
+
+function mapWithArrOfObjs() {
+	let Products = [
+		{product:'mouse', price: 150},
+		{product:'keyboard', price: 200},
+		{product:'laptop', price: 300},
+		{product:'joystick', price: 400}
+	];
+	
+	let newProducts = Products.map(productItem => {
+		console.log(productItem);
+		return productItem;
+		}
+	);
+	console.log(newProducts.map(newProduct => newProduct.product));
+}
+
+function serviceMaps(){
+    let Services = [
+        {service: 'Doctor1', fee: 1000 },
+        {service: 'Doctor2', fee:2000},
+        {service: 'Doctor3', fee:3000},
+    ];
+    
+    let newServices = Services.map(serviceItem => {
+        console.log(serviceItem, 'service item');
+        return serviceItem;
+    })
+
+    console.log(newServices.map(newServices => newServices.service))
+}
+</script>
+
+</body>
+</html>

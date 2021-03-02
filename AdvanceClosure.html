@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+   <h1>Advance Closure</h1> 
+
+   <script>
+       let x=0;
+
+       let f1 = function(){
+           let y=1
+           console.log('f1', x);
+           let f2 = function(){
+            console.log('f2', x);
+			console.log('f2', z); //undefined because of (always climb up the scope chain)
+           }
+           f2()
+
+           let f3 = function(){
+               let z=2;
+               console.log('f3', x);
+				console.log('f3', y);
+				console.log('f3', z);
+           }
+           f3()
+       }
+
+       f1()
+
+       let outerFunc = function(){
+           let outerVar = 'Outer function variable'
+           console.log(outerVar);
+
+           let innerFunc = function(){
+               let innerVar = 'inner function variable';
+               console.log(innerVar);
+               console.log(outerVar)
+           }
+           innerFunc()
+       }
+   </script>
+</body>
+</html>

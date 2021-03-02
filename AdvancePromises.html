@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Advance Promises</h1>
+<script>
+	//run sequencely because of its dependency
+	let cleanRoom = function(){
+		return new Promise(function(resolve, reject){
+			resolve('clean the room ');
+		})
+	}
+
+	let removeGarbage = function(message){
+		return new Promise(function(resolve, reject){
+			resolve(message + 'remove garbage ');
+		}) 
+	}
+
+	let winIcecream = function(message){
+		return new Promise(function(resolve, reject){
+			resolve(message + 'won icecream ');
+		})
+	} 
+
+	cleanRoom().then(function(result){
+		return removeGarbage(result);
+	}).then(function(result){
+		return winIcecream(result);
+	}).then(function(result){
+		console.log('finished ' + result); //finished clean the room remove garbage won icecream
+	})
+
+	// parallel run, you dont wanna once to fnshed or second to start, once all them are done, then do somethng
+	Promise.all([cleanRoom(), removeGarbage(), winIcecream()]).then(function(){
+		console.log('all finished');
+	})
+
+	//when anyone of them is finished, then do somethng
+	Promise.race([cleanRoom(), removeGarbage(), winIcecream()]).then(function(){
+		console.log('one of them is finished');
+	})
+</script>
+
+</body>
+</html>

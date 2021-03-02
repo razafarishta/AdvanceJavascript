@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Prototype</h1>
+
+<script>
+	//every function expression is a constructor
+	let x = function(val){
+		this.a = 0;
+		this.b = val;
+
+		// this.getc = function(){
+		// 	return this.b;
+		// }
+	}
+
+	x.prototype.getc = function(){
+		return this.b;
+	}
+
+	let X1 = new x(1);
+	let X2 = new x(2);
+
+	//console.log(X1.getc(), X2.getc());
+	// console.dir() --> look into the objects in much details
+
+	//example 2:
+	let test = function(){
+
+	}
+	console.log(test.toString());
+	//test is create from function and function is create from object(master object) everyone have prototype and prototype has (bunches of methods and properties).
+	//and test can access all of them through prototype chain
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Let Var Const</h1>
+
+<script>
+	// var -> functon scope
+	// let and const (ES6 or ES2015) -> block scope
+
+	//const --> 1) reassign nahi kia jasta
+	//			2) window object ka property nahi bnta
+
+	//var
+	var varFunc = function(){
+		var a = 10;
+		if(true){
+			var a = 20;
+			console.log(a); //20
+		}
+		console.log(a); //20
+	}
+    console.log(a, 'aaa')
+	varFunc();
+
+	//let
+	let letFunc = function(){
+		let a = 10;
+		if(true){
+			let a = 20;
+			console.log(a);  //20
+            // var a= 30
+            // console.log(a, 'bbb')
+		}
+		console.log(a); //10
+	}
+	letFunc();
+
+	//Loop Scope
+	//var
+	var a = 10;
+	for(var a = 0; a < 5; a++){
+        console.log(a, 'a loop')
+	}
+	console.log(a); //5
+
+	//let
+	let b = 10;
+	for(let b = 0; b < 5; b++){
+        console.log(b, 'b loop')
+	}
+	console.log(b); //10
+</script>
+
+</body>
+</html>

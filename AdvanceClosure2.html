@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Closure</h1>
+
+<script>
+	//closures are nothing but functions with preserved data.
+	//the value from outside the function can be used inside the function
+	//lexical scope: inner functions have access to the variables and other resources to their parent scope.
+	//always climb up the scope chain.
+
+	var addTo = function(passed){
+
+		var add = function(inner){
+			return passed + inner;
+		}
+		return add;
+	}
+	
+	let addThree = new addTo(3);
+	let addFour = new addTo(4);
+	console.log(addThree(3));
+	console.log(addFour(4));
+	// console.dir(addThree);
+	// console.dir(addFour);
+</script>
+
+</body>
+</html>

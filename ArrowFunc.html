@@ -1,0 +1,79 @@
+<!-- const video = {
+    title = 'a',
+    play(){
+        console.log(this)
+    }
+} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <script>
+
+        //eg1
+    // const video = {
+    //     title: 'a',
+    //     play(){
+    //         console.log(this)
+    //     }
+    // }
+    // function Video(title){
+    //     this.title = title;
+    //     console.log(this)
+    // }
+
+    // const v = new Video('a') // ye new operator empty object bana deta he
+
+
+
+    //eg2
+    // const user = {
+    //     name: "Edwin",
+    //     age: 14,
+    //     married: false,
+    //     purchases:["purchases", "car", "laptop"],
+
+    //     sayName: function(){
+    //         console.log(this.name)
+    //     }
+    // };
+    // user.sayName()
+    // console.log(user.purchases)
+    // console.log(this)
+
+
+    //eg3
+
+    let mytodos={
+        day:'Monday',
+        meetings: 0,
+        meetDone:0,
+
+        addMeeting: function(num){
+            this.meetings= this.meetings + num
+            console.log(this)
+        },
+
+        summary: function(){
+            return `You have ${this.meetings} meetings today !`
+        }
+    }
+
+
+    // let mytodosTwo={
+    //     day:'Tuesday',
+    //     meetings: 2,
+    //     meetDone:1,
+
+    //     addMeeting: function(){
+    //         console.log(this)
+    //     }
+    // }
+    // mytodos.addMeeting(4)
+    console.log(mytodos.summary())
+    // mytodosTwo.addMeeting()
+</script>
+</body>
+</html>

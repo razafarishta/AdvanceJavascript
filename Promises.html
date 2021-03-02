@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<h1>
+    Promises
+</h1>    
+<script>
+    let promise = new Promise(function(resolve , reject){
+        if(false){
+            setTimeout(()=>{
+                resolve('Successfully done')
+            }, 500)
+        }else{
+            reject('Something went wrong')
+        }
+    })
+
+    promise.then(
+        function(res){
+            console.log(res, 'res')
+        }
+    ).catch(
+        function(err){
+            console.log(err)
+        }
+    )
+</script>
+</body>
+</html>

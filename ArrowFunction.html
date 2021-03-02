@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>ES6 Arrow Functions</h1>
+
+<script>
+    //Fat Arrow does not have on 'this' which means it used parent this and it bind it
+
+    //EG 1
+
+	// simple function
+    // let mult = function(a, b){
+    //     return a * b;
+    // }
+    // console.log(mult(5, 5));
+
+    // Arrow function ES6
+
+    // let multArrowFunc = (a, b) => {
+    // 	return a * b;
+    // }
+
+    // let multArrowFunc = (a, b) => a * b;
+    // console.log(multArrowFunc(2, 2));
+
+    //EG 2
+    // let x = function(){
+    //     this.val = 1;
+    //     var that = this; // for solve the problem
+    //     setTimeout(function(){
+    //         //this.val++; error: because it doesnt recognise the outer 'this'
+    //         that.val++;
+    //         console.log(that.val);
+    //     }, 1)
+    // };    
+
+    //EG 3
+    // let x = function(){
+    // this.val = 1;
+    // setTimeout(() => {
+    //     this.val++;
+    //     console.log(this.val);
+    // }, 1)
+    // };     
+    // var xx = new x();
+
+    // EG 4
+    let x = (...n) => {
+        console.log(n[2]);
+    }
+    x(0, 1, 2);
+</script>
+
+</body>
+</html>

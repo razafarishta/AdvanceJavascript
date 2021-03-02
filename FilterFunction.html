@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button onclick="filterWithArr()">FilterWithArr</button>
+<button onclick="filterWithString()">FilterWithString</button>
+
+<script>
+function filterWithArr() {
+  let nums = [5,10,2,6,9];
+  let newNums = nums.filter(num => {
+	return num > 6;
+  });
+  console.log(newNums);
+}
+
+function filterWithString(){
+    let stringg =['abc', 'bde', 'efg'];
+    let filterString = stringg.filter(strings =>{
+        return strings === 'abd'
+    })
+    console.log(filterString)
+}
+
+</script>
+
+</body>
+</html>

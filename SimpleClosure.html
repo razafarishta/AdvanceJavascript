@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<h1>
+	Closure
+</h1>	
+
+<script>
+	var passed =3;
+	let add = function(){
+		let inner =2
+
+		return passed+ inner
+	}
+
+	console.log(add()) //5
+
+	var passed = 4
+
+	console.log(add()) //6
+</script>
+</body>
+</html>

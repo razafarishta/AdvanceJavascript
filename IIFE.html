@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button onclick="IIFE()">Immediate Invoked Function Expression</button>
+
+<script>
+function IIFE() {
+	//stop global variable pollution.
+	//the code only called once. (init once)
+	(function(x){ // anonymous functon
+		let counter = x;
+		counter ++;
+		console.log(counter); // 6
+	})(5); // () called immidiatly
+	
+	function counter(){
+		let counter = 0;
+		counter ++; // 1
+	}
+	counter();
+}
+</script>
+
+</body>
+</html>
